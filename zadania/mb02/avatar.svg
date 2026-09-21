@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96"
+     role="img" aria-label="Awatar: inicjały JK">
+  <circle cx="48" cy="48" r="48" fill="#5B3FD6"/>
+  <text x="48" y="48" fill="#FFFFFF"
+        font-family="Segoe UI, Arial, sans-serif" font-size="36" font-weight="600"
+        text-anchor="middle" dominant-baseline="central">JK</text>
+</svg>
