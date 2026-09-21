@@ -1,0 +1,124 @@
+:root {
+  --kolor-glowny: #5B3FD6;
+  --kolor-ciemny: #40299B;
+  --kolor-blad:   #C0392B;
+  --kolor-tlo:    #F4F4F7;
+}
+
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.6;
+  color: #1E1E24;
+  background: var(--kolor-tlo);
+}
+
+.naglowek, main {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+
+.naglowek { padding-top: 2rem; }
+.naglowek h1 { margin: 0; color: var(--kolor-glowny); }
+.podtytul { margin: 0.25rem 0 1.5rem; color: #5A5A66; }
+
+
+.pole-filtra label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+
+.pole-filtra input {
+  width: 100%;
+  max-width: 340px;
+  padding: 0.55rem 0.7rem;
+  font: inherit;
+  border: 1px solid #C7C7D1;
+  border-radius: 6px;
+  background: #FFFFFF;
+}
+
+.pole-filtra input:focus {
+  outline: 2px solid var(--kolor-glowny);
+  outline-offset: 1px;
+  border-color: var(--kolor-glowny);
+}
+
+.licznik {
+  margin: 0.4rem 0 1.25rem;
+  min-height: 1.2rem;
+  font-size: 0.875rem;
+  color: #5A5A66;
+}
+
+
+.lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0 0 2rem;
+  margin: 0;
+  list-style: none;
+}
+
+.karta {
+  flex: 1 1 260px;
+  background: #FFFFFF;
+  border: 1px solid #E3E3EA;
+  border-left: 4px solid var(--kolor-glowny);
+  border-radius: 8px;
+  padding: 1rem 1.1rem;
+}
+
+.karta h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.05rem;
+  color: var(--kolor-ciemny);
+}
+
+.karta dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.15rem 0.6rem;
+  font-size: 0.9rem;
+}
+
+
+.karta dt { color: #5A5A66; }
+.karta dd { margin: 0; }
+
+.karta a {
+  color: var(--kolor-glowny);
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.karta a:hover {
+  text-decoration: underline;
+  color: var(--kolor-ciemny);
+}
+
+.stan {
+  padding: 1rem 1.25rem;
+  background: #FFFFFF;
+  border: 1px dashed #C7C7D1;
+  border-radius: 8px;
+  color: #5A5A66;
+}
+
+.stan--blad {
+  border: 1px solid var(--kolor-blad);
+  border-left: 4px solid var(--kolor-blad);
+  background: #FDECEA;
+  color: var(--kolor-blad);
+}
+
+.stan--blad strong { display: block; margin-bottom: 0.3rem; }
