@@ -5,6 +5,7 @@ import viteLogo from './assets/vite.svg'
 import './App.css'
 import Navbar from './components/Navbar.jsx'
 import CategoryBar from './components/CategoryBar.jsx'
+import Gallery from './components/Gallery.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -39,6 +40,7 @@ function App() {
     </header>
     <main className='container'>
       <CategoryBar/>
+      <Gallery />
     </main>
   </>
   )
