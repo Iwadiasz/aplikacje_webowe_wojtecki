@@ -6,6 +6,10 @@ import './App.css'
 import Navbar from './components/Navbar.jsx'
 import CategoryBar from './components/CategoryBar.jsx'
 import Gallery from './components/Gallery.jsx'
+import Footer from './components/Footer.jsx'
+import AddPhotoModal from './components/AddPhotoModal.jsx'
+import FiltersOffCanvas from './components/FiltersOffCanvas.jsx'
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -42,6 +46,10 @@ function App() {
       <CategoryBar/>
       <Gallery />
     </main>
+    <Footer/>
+
+    <AddPhotoModal/>
+    <FiltersOffCanvas />
   </>
   )
 }
