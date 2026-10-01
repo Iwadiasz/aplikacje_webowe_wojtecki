@@ -6,7 +6,8 @@
         "category": "gory",
         "image": "https://picsum.photos/seed/morskie-oko/600/400",
         "imageLarge": "https://picsum.photos/seed/morskie-oko/1200/800",
-        "alt": "Tafla jeziora w Tatrach tuż przed wschodem słońca."
+        "alt": "Tafla jeziora w Tatrach tuż przed wschodem słońca.",
+        "favorite": false
     },
     {
         "id": 2,
@@ -15,7 +16,8 @@
         "category": "gory",
         "image": "https://picsum.photos/seed/gran-tatry/600/400",
         "imageLarge": "https://picsum.photos/seed/gran-tatry/1200/800",
-        "alt": "Szlak granią w porannej mgle, widok na dolinę."
+        "alt": "Szlak granią w porannej mgle, widok na dolinę.",
+        "favorite": false
     },
     {
         "id": 3,
@@ -24,7 +26,8 @@
         "category": "gory",
         "image": "https://picsum.photos/seed/schronisko/600/400",
         "imageLarge": "https://picsum.photos/seed/schronisko/1200/800",
-        "alt": "Drewniane schronisko na przełęczy, koniec dnia marszu."
+        "alt": "Drewniane schronisko na przełęczy, koniec dnia marszu.",
+        "favorite": false
     },
     {
         "id": 4,
@@ -33,7 +36,8 @@
         "category": "morze",
         "image": "https://picsum.photos/seed/latarnia/600/400",
         "imageLarge": "https://picsum.photos/seed/latarnia/1200/800",
-        "alt": "Biała latarnia na klifie, widziana od strony plaży."
+        "alt": "Biała latarnia na klifie, widziana od strony plaży.",
+        "favorite": false
     },
     {
         "id": 5,
@@ -42,7 +46,8 @@
         "category": "morze",
         "image": "https://picsum.photos/seed/fale-poranek/600/400",
         "imageLarge": "https://picsum.photos/seed/fale-poranek/1200/800",
-        "alt": "Pusta plaża i długa fala tuż po wschodzie słońca."
+        "alt": "Pusta plaża i długa fala tuż po wschodzie słońca.",
+        "favorite": false
     },
     {
         "id": 6,
@@ -51,7 +56,8 @@
         "category": "morze",
         "image": "https://picsum.photos/seed/port-rybacki/600/400",
         "imageLarge": "https://picsum.photos/seed/port-rybacki/1200/800",
-        "alt": "Kutry przy nabrzeżu, sieci rozwieszone do suszenia."
+        "alt": "Kutry przy nabrzeżu, sieci rozwieszone do suszenia.",
+        "favorite": false
     },
     {
         "id": 7,
@@ -60,7 +66,8 @@
         "category": "miasto",
         "image": "https://picsum.photos/seed/starowka/600/400",
         "imageLarge": "https://picsum.photos/seed/starowka/1200/800",
-        "alt": "Rynek w świetle latarni, długi czas naświetlania."
+        "alt": "Rynek w świetle latarni, długi czas naświetlania.",
+        "favorite": false
     },
     {
         "id": 8,
@@ -69,6 +76,7 @@
         "category": "miasto",
         "image": "https://picsum.photos/seed/most-rzeka/600/400",
         "imageLarge": "https://picsum.photos/seed/most-rzeka/1200/800",
-        "alt": "Stalowa konstrukcja mostu i panorama miasta w tle."
+        "alt": "Stalowa konstrukcja mostu i panorama miasta w tle.",
+        "favorite": false
     }
 ]
