@@ -47,12 +47,12 @@ function App() {
         Nie znaleziono zdjęć w tej kategorii.
       </div>
       )}
-      <Gallery zdjecia={zdjecia}/>
+      <Gallery zdjecia={widoczne}/>
     </main>
     <Footer/>
 
     <AddPhotoModal/>
-    <FiltersOffCanvas />
+    <FiltersOffCanvas  aktywna={aktywnaKategoria} onWybierz={setAktywnaKategoria}/>
   </>
   )
 }
