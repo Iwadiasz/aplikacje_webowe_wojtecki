@@ -10,6 +10,8 @@ import { useState } from 'react'
 
 function App() {
   const [zdjecia, setZdjecia] = useState(photos);
+  const [aktywnaKategoria, setAktywnaKategoria] = useState('wszystkie');
+  const widoczne = aktywnaKategoria === 'wszystkie' ? zdjecia : zdjecia.filter(z => z.category === aktywnaKategoria);
   return (
   <>
     <Navbar/>
@@ -39,7 +41,12 @@ function App() {
       </div>
     </header>
     <main className='container'>
-      <CategoryBar/>
+      <CategoryBar aktywna={aktywnaKategoria} onWybierz={setAktywnaKategoria}/>
+      {widoczne.length === 0 && (
+        <div className="alert alert-warning">
+        Nie znaleziono zdjęć w tej kategorii.
+      </div>
+      )}
       <Gallery zdjecia={zdjecia}/>
     </main>
     <Footer/>
