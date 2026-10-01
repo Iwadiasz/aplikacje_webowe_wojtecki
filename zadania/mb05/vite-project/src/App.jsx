@@ -12,6 +12,9 @@ function App() {
   const [zdjecia, setZdjecia] = useState(photos);
   const [aktywnaKategoria, setAktywnaKategoria] = useState('wszystkie');
   const widoczne = aktywnaKategoria === 'wszystkie' ? zdjecia : zdjecia.filter(z => z.category === aktywnaKategoria);
+  function usunZdjecie(id) {
+    setZdjecia(zdjecia.filter(z => z.id !== id))
+  }
   return (
   <>
     <Navbar/>
@@ -31,7 +34,7 @@ function App() {
           <div className="d-flex flex-wrap gap-2 justify-content-lg-end">
 
             <button type="button" className="btn btn-outline-secondary" data-bs-toggle="offcanvas" data-bs-target="#panelFiltrow">
-            Filtry
+              Filtry
             </button>
             <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#dodajZdjecie">
               Dodaj zdjęcie
@@ -47,7 +50,7 @@ function App() {
         Nie znaleziono zdjęć w tej kategorii.
       </div>
       )}
-      <Gallery zdjecia={widoczne}/>
+      <Gallery zdjecia={widoczne} onUsun={usunZdjecie}/>
     </main>
     <Footer/>
 
