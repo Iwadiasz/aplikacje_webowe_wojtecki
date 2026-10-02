@@ -10,21 +10,25 @@ function App() {
  const numerKursuRef = useRef(null)
  const [szukaj, setSzukaj] = useState('')
  const [rosnaco, setRosnaco] = useState(true)
-
+ const [status, setStatus] = useState(null)
  const widoczne = kursy.map((kurs, index) => ({ kurs, numer: index + 1 })).filter(({ kurs }) => kurs.toLowerCase().includes(szukaj.toLowerCase())).sort((a, b) => rosnaco ? a.kurs.localeCompare(b.kurs) : b.kurs.localeCompare(a.kurs))
- function handleSubmit(event) {
-  event.preventDefault()
-  const imienazwisko = imieNazwiskoRef.current.value
-  const numerkursu = Number(numerKursuRef.current.value)
-  const kurs = kursy[numerkursu - 1]
-  console.log(imienazwisko)
-  if (kurs !== undefined) {
-    console.log(kurs)
-  } 
-  else {
-    console.log('Nieprawidłowy numer kursu')
-  }
- }
+  function handleSubmit(event) {
+    event.preventDefault()
+    const imienazwisko = imieNazwiskoRef.current.value
+    const numerkursu = Number(numerKursuRef.current.value)
+    const kurs = kursy[numerkursu - 1]
+    console.log(imienazwisko)
+    if (kurs !== undefined) {
+      console.log(kurs)
+      setStatus({ typ: 'sukces', tresc: `${imienazwisko} zapisany(-a) na kurs: ${kurs}` })
+    } 
+    else {
+      console.log('Nieprawidłowy numer kursu')
+      setStatus({ typ: 'blad', tresc: 'Nieprawidłowy numer kursu' })
+    }
+    }
+
+
  return (
   <div className="container py-4" style={{ maxWidth: 600 }}>
     <h1 className="h3 mb-4">Zapisy na kursy</h1>
@@ -56,6 +60,12 @@ function App() {
         </button>
       </div>
     </form>
+    {status && 
+    (
+      <div className={`alert alert-${status.typ === 'sukces' ? 'success' : 'danger'}`}>
+        {status.tresc}
+      </div>
+    )}
   </div>
  )
 }
