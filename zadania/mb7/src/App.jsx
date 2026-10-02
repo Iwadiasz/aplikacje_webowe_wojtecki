@@ -1,122 +1,52 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
-
+import { useRef } from 'react'
+const kursy = [
+ 'Programowanie w C#',
+ 'Angular dla początkujących',
+ 'Kurs Django',
+ 'Wprowadzenie do SQL',
+]
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
+ const imieNazwiskoRef = useRef(null)
+ const numerKursuRef = useRef(null)
+ const widoczne = kursy.map((kurs, index) => ({ kurs, numer: index + 1 })).filter(({ kurs }) => kurs.toLowerCase().includes(szukaj.toLowerCase()))
+ function handleSubmit(event) {
+  event.preventDefault()
+  const imienazwisko = imieNazwiskoRef.current.value
+  const numerkursu = Number(numerKursuRef.current.value)
+  const kurs = kursy[numerkursu - 1]
+  console.log(imienazwisko)
+  if (kurs !== undefined) {
+    console.log(kurs)
+  } 
+  else {
+    console.log('Nieprawidłowy numer kursu')
+  }
+ }
+ return (
+  <div className="container py-4" style={{ maxWidth: 600 }}>
+    <h1 className="h3 mb-4">Zapisy na kursy</h1>
+    <h2 className="h5">Liczba kursów: {kursy.length}</h2>
+    <ol>
+      {kursy.map((kurs, index) => (
+        <li key={index}>{kurs}</li>
+      ))}
+    </ol>
+    <form onSubmit={handleSubmit}>
+      <div className="form-group">
+        <label htmlFor="imienazwisko">Imię i nazwisko:</label>
+        <input type="text" id="imienazwisko" className="form-control" ref={imieNazwiskoRef}/>
+      </div>
+      <div className="form-group mt-2">
+        <label htmlFor="numerkursu">Numer kursu:</label>
+        <input type="number" id="numerkursu" className="form-control" ref={numerKursuRef}/>
+      </div>
+      <div className="form-group mt-3">
+        <button type="submit" className="btn btn-primary">
+          Zapisz do kursu
         </button>
-      </section>
-
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+      </div>
+    </form>
+  </div>
+ )
 }
-
 export default App
