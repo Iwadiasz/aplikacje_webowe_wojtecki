@@ -5,10 +5,24 @@ import Gallery from './components/Gallery.jsx'
 import Footer from './components/Footer.jsx'
 import AddPhotoModal from './components/AddPhotoModal.jsx'
 import FiltersOffCanvas from './components/FiltersOffCanvas.jsx'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 function App() {
   const [zdjecia, setZdjecia] = useState([]);
+  useEffect(() => {
+    async function pobierzZdjecia() {
+      try{
+        const odpowiedz = await fetch('photos.json');
+        if(!odpowiedz.ok) throw new Error("Błąd serwera" + odpowiedz.status)
+        const dane = await odpowiedz.json();
+        setZdjecia(dane);
+      }
+      catch(err){
+        console.log(err.message);
+      }
+    }
+    pobierzZdjecia();
+  }, [])
   const [aktywnaKategoria, setAktywnaKategoria] = useState('wszystkie');
   const widoczne = aktywnaKategoria === 'wszystkie' ? zdjecia : zdjecia.filter(z => z.category === aktywnaKategoria);
   function usunZdjecie(id) {
