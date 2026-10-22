@@ -5,6 +5,7 @@ import Gallery from './components/Gallery.jsx'
 import Footer from './components/Footer.jsx'
 import AddPhotoModal from './components/AddPhotoModal.jsx'
 import FiltersOffCanvas from './components/FiltersOffCanvas.jsx'
+import ZdjecieDnia from './components/ZdjeciaDnia.jsx'
 import { useEffect, useState } from 'react'
 
 function App() {
@@ -109,6 +110,7 @@ function App() {
 
     <AddPhotoModal onDodaj={dodajZdjecie} />
     <FiltersOffCanvas  aktywna={aktywnaKategoria} onWybierz={setAktywnaKategoria}/>
+    <ZdjecieDnia />
   </>
   )
 }
